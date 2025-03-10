@@ -1,51 +1,55 @@
-# Face Attendance System
+# Face Time Attendance System
 
 """
-Giới thiệu:
-    Đây là một ứng dụng chấm công bằng nhận diện khuôn mặt sử dụng PyQt6 để xây dựng giao diện người dùng, TensorFlow để nhận diện khuôn mặt, và OpenCV để xử lý hình ảnh.
+Introduction:
+This is a face recognition time attendance application using PyQt6 to build the user interface, TensorFlow for face recognition and OpenCV for image processing.
 
-Yêu cầu hệ thống:
-    - Python 3.x
-    - Thư viện cần thiết:
-        ```bash
-        pip install pyqt6 tensorflow opencv-python pandas numpy
-        ```
+System requirements:
+- Python 3.x
+- Required libraries:
+``` bash
+pip install pyqt6 tensorflow opencv-python pandas numpy
+```
 
-Cách sử dụng:
-    1. Chạy chương trình:
-        ```bash
-        cd GUI
-        python main.py
-        ```
-    
-    2. Các chức năng chính:
-        - Nhập Thông Tin: Người dùng nhập thông tin cá nhân (Họ tên, Mã nhân viên) và chụp ảnh khuôn mặt để lưu vào hệ thống.
-        - Chấm Công: Nhận diện khuôn mặt của nhân viên và ghi nhận thời gian chấm công.
-        - Bảng Chấm Công: Hiển thị danh sách các lần chấm công của nhân viên.
+How to use:
+1. Run the program:
+``` bash
+cd GUI
+python main.py
+```
 
-Cấu trúc dự án:
-    ```
-    .
-    ├── dataset/                  # Thư mục chứa ảnh khuôn mặt của nhân viên
-    ├── attendance.csv            # File lưu lịch sử chấm công
-    ├── face_attendance_model.h5  # Mô hình nhận diện khuôn mặt đã được huấn luyện
-    ├── app.py                    # Mã nguồn chính của ứng dụng
-    └── README.md                 # Hướng dẫn sử dụng
-    ```
+2. Main functions:
 
-Mô tả mã nguồn:
-    - `AttendanceDialog`: Hộp thoại nhập thông tin nhân viên.
-    - `FaceAttendanceApp`: Giao diện chính của ứng dụng, hiển thị video từ webcam và xử lý nhận diện khuôn mặt.
-    - `update_frame()`: Cập nhật hình ảnh từ webcam và thực hiện nhận diện khuôn mặt.
-    - `get_user_info()`: Lưu khuôn mặt của nhân viên để huấn luyện mô hình.
-    - `record_attendance()`: Lưu thông tin chấm công vào `attendance.csv`.
-    - `view_report()`: Hiển thị lịch sử chấm công của nhân viên.
+- Enter information: User enters personal information (Full name, Employee code) and takes a photo of face to save to the system.
 
-Ghi chú:
-    - Cần đảm bảo mô hình `face_attendance_model.h5` đã được huấn luyện trước.
-    - Hình ảnh nhân viên phải được lưu vào thư mục `dataset/` để mô hình nhận diện chính xác.
+- Timekeeping: Recognize employee's face and record time.
 
-Liên hệ:
-    Mọi thắc mắc hoặc góp ý
-"""
+- Timekeeping table: Displays a list of employee's timekeeping.
 
+Project configuration:
+```
+.
+├── dataset/ # Folder containing employee face photos
+├──attendance.csv # File to save attendance history
+├── face_attendance_model.h5 # Trained face recognition model
+├── app.py # Main source code of the application
+└── README.md # User guide
+```
+
+Source code description:
+- `AttendanceDialog`: Employee information input dialog.
+- `FaceAttendanceApp`: Main interface of the application, displaying video from webcam and face recognition processor.
+- `update_frame()`: Update image from webcam and perform face recognition.
+- `get_user_info()`: Save employee face code to train the model.
+- `record_attendance()`: Save attendance information to `attendance.csv`.
+
+- `view_report()`: Display employee attendance history.
+
+Note:
+- Make sure the `face_attendance_model.h5` model has been trained before.
+
+- The image character must be saved to the `dataset/` folder to accurately describe the recognition.
+
+Contact:
+Any questions or comments
+""
